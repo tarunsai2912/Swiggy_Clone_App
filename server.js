@@ -9,7 +9,7 @@ const path = require('path')
 dotenv.config()
 
 const app = express()
-const port = process.env.port
+const port = process.env.port || 4000
 
 app.use(bodyParser.json())
 
@@ -25,6 +25,10 @@ mongoose.connect(process.env.MONGO_URI)
 
 mongoose.connection.on('connected', () => {
     console.log('MongoDb is connected...');
+})
+
+app.get('/', (req, res) => {
+    res.send('Hello User Welcome to Onion')
 })
 
 app.listen(port, () => {
