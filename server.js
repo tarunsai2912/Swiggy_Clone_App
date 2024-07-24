@@ -6,12 +6,14 @@ const vendorRoutes = require('./routes/vendorRoutes')
 const productRoutes = require('./routes/productRoutes')
 const firmRoutes = require('./routes/firmRoutes')
 const path = require('path')
+const cors = require('cors')
 dotenv.config()
 
 const app = express()
 const port = process.env.port || 4000
 
 app.use(bodyParser.json())
+app.use(cors())
 
 app.use('/api/vendor', vendorRoutes)
 

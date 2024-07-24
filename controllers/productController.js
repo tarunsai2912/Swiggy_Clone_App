@@ -3,6 +3,7 @@ const express = require('express')
 const Firm = require('../models/firm')
 const multer = require('multer')
 const firm = require('../models/firm')
+const path = require('path')
 
 // image storing
 const storage = multer.diskStorage({

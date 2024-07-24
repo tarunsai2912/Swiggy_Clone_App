@@ -10,7 +10,7 @@ const vendorRegister = async (req, res) => {
         const {username, email, password} = req.body
         const user = await Vendor.findOne({email})
         if(user){
-            res.status(400).json({msg: "Invalid User Credentials"})
+            res.status(400).json({msg: "User Already Exists"})
         }
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt)

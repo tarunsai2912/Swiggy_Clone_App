@@ -2,6 +2,7 @@ const firm = require('../models/firm')
 const Firm = require('../models/firm')
 const Vendor = require('../models/vendor')
 const multer = require('multer')
+const path = require('path')
 
 // image storing
 const storage = multer.diskStorage({
